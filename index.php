@@ -9,18 +9,39 @@
 <head>
 	<title>Natural Language Processing</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	
+	<!-- style -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
 	<div id="header">
 		<h1><a href="">Natural Language Processing</a></h1>
-		<p style="margin-top:10px"><a target="_blank" href="porter_stemming.php" style="color:rgba(255,255,255,0.8);text-decoration: none">Uji Stemming</a> - <a target="_blank" href="peringkas.php" style="color:rgba(255,255,255,0.8);text-decoration: none">Perhitungan TF-IDF</a> - <a target="_blank" href="demo.html" style="color:rgba(255,255,255,0.8);text-decoration: none">Demo</a></p>
+		<!-- <p style="margin-top:10px"><a target="_blank" href="porter_stemming.php" style="color:rgba(255,255,255,0.8);text-decoration: none">Uji Stemming</a> - <a target="_blank" href="peringkas.php" style="color:rgba(255,255,255,0.8);text-decoration: none">Perhitungan TF-IDF</a> - <a target="_blank" href="demo.html" style="color:rgba(255,255,255,0.8);text-decoration: none">Demo</a></p> -->
 	</div>
 	<div id="content">
 		<?php
 			if(!isset($_POST["submit"])) {
 		?>
-		<div class="col-6 form">
+		<div class="card text-center">
+			<div class="card-header">
+				Featured
+			</div>
+			<div class="card-body">
+				<h5 class="card-title">Silakan upload file text</h5>
+				<form action="" method="POST" enctype="multipart/form-data">
+					<label for="inputfile">Upload</label>
+					<input id="inputfile" type="file" name="file" required="">
+					<input type="submit" name="submit" value="kirim" class="btn btn-primary">
+				</form>
+				<!-- <a href="#" class="btn btn-primary">Go somewhere</a>
+				<p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+			</div>
+			<div class="card-footer text-muted">
+				3120640004 - Zuhad Achmad Fachrian - D4LJTI 
+			</div>
+		</div>
+		<!-- <div class="col-6 form">
 			<div id="form">
 				<h2>Input File</h2>
 				<form action="" method="POST" enctype="multipart/form-data">
@@ -29,7 +50,7 @@
 					<input type="submit" name="submit" value="kirim">
 				</form>
 			</div>
-		</div>
+		</div> -->
 		<?php
 
 			} else {
@@ -428,7 +449,6 @@
 		<?php } ?>
 	</div><!-- END CONTENT -->
 	<footer>
-		I Putu Iduar Perdana - I Wayan Gunaya - Putu Jhonarendra<br /><br />
 
 	<?php
 		$endtime = microtime(true);
