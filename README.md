@@ -5,7 +5,7 @@
 
 1. Upload DB dengan nama `tesonline`
 2. Halaman depan di `index.php`
-3. Upload korpus bernama `korpus.txt/dummytext.txt`, kemudian klk button kirim
+3. Upload file text dari folder `dummy text` bernama `korpus.txt/dummytext.txt`, kemudian klk button kirim
 4. Tampil halaman dengan panel-panel seperti Isi Konten, Jumlah Kata dan Frekuensi Kata
 
 ## Screenshot
