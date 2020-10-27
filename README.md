@@ -2,14 +2,13 @@
 <p align="center">Tokenisasi, Stopword, Stemming, Summarization, TF-IDF</p>
 
 ## Tutorial
-1. Halaman depan di `index.php`
-2. Upload korpus bernama `korpus.txt`
-3. Tampil halaman dengan panel-panel seperti tokenisasi, stemming dan summarization
-4. Terdapat menu "Uji Stemming", "Perhitungan TF-IDF", dan "Demo"
- - "Uji Stemming" untuk mengetes porter stemming, masukkan kata yang akan di stem.
- - "Perhitungan TF-IDF" untuk melihat contoh perhitungan TF-IDF.
- - "Demo" untuk melihat vide demo.
+
+1. Upload DB dengan nama `tesonline`
+2. Halaman depan di `index.php`
+3. Upload file text dari folder `dummy text` bernama `korpus.txt/dummytext.txt`, kemudian klik button kirim
+4. Tampil halaman dengan panel-panel seperti Isi Konten, Jumlah Kata dan Frekuensi Kata
 
 ## Screenshot
-![](https://raw.githubusercontent.com/jhonarendra/penghitung-kata/master/screenshot/1.png)
-![](https://raw.githubusercontent.com/jhonarendra/penghitung-kata/master/screenshot/2.png)
+
+![](https://github.com/zfachrian/penghitung-kata/blob/tugasAI/screenshot/1.PNG)
+![](https://github.com/zfachrian/penghitung-kata/blob/tugasAI/screenshot/2.png)

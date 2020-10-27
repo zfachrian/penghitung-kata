@@ -47,14 +47,12 @@
 			$i = 0;
 			foreach ($input as $term) {
 				$term = strtolower($term);
-				if(!in_array($term, $a)){
-					
+				if(!in_array($term, $a)){					
 					if (!isset($typelist[$term])){
 						$typelist[$term] = 1;
 					} else {
 						$typelist[$term]++;
 					}
-					
 				}
 				$i++;
 			}
@@ -167,11 +165,7 @@
 					$kata = $this->hapusawalan2($kata);
 				}
 			}
-			
-			
-			
 			return $kata;
-		  
 		}
 		public function porterkamus($kata){
 			if($this->cari($kata)!=1){
