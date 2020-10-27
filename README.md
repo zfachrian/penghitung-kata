@@ -1,5 +1,4 @@
 <h1 align="center">Natural Language Processing</h1>
-<p align="center">Tokenisasi, Stopword, Stemming, Summarization, TF-IDF</p>
 
 ## Tutorial
 
