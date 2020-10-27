@@ -16,8 +16,7 @@
 </head>
 <body>
 	<div id="header">
-		<h1><a href="">Natural Language Processing</a></h1>
-		<!-- <p style="margin-top:10px"><a target="_blank" href="porter_stemming.php" style="color:rgba(255,255,255,0.8);text-decoration: none">Uji Stemming</a> - <a target="_blank" href="peringkas.php" style="color:rgba(255,255,255,0.8);text-decoration: none">Perhitungan TF-IDF</a> - <a target="_blank" href="demo.html" style="color:rgba(255,255,255,0.8);text-decoration: none">Demo</a></p> -->
+		<h1>Natural Language Processing</h1>
 	</div>
 	<div id="content">
 		<?php
@@ -25,12 +24,11 @@
 		?>
 		<div class="card text-center">
 			<div class="card-header">
-				Featured
+				Fitur
 			</div>
 			<div class="card-body">
 				<h5 class="card-title">Silakan upload file text</h5>
 				<form action="" method="POST" enctype="multipart/form-data">
-					<label for="inputfile">Upload</label>
 					<input id="inputfile" type="file" name="file" required="">
 					<input type="submit" name="submit" value="kirim" class="btn btn-primary">
 				</form>
@@ -41,16 +39,6 @@
 				3120640004 - Zuhad Achmad Fachrian - D4LJTI 
 			</div>
 		</div>
-		<!-- <div class="col-6 form">
-			<div id="form">
-				<h2>Input File</h2>
-				<form action="" method="POST" enctype="multipart/form-data">
-					<label for="inputfile">Upload</label>
-					<input id="inputfile" type="file" name="file" required="">
-					<input type="submit" name="submit" value="kirim">
-				</form>
-			</div>
-		</div> -->
 		<?php
 
 			} else {
@@ -62,7 +50,6 @@
 				$content = $contents->tokenisasi($plain_text); // $content = kata yg sudah ditokenisasi, misahkan kata2
 
 				$wordcount = count($content);
-				$stopwordlist = $contents->stopwordlist($content);
 				$wordlist = $contents->wordlist($content);
 				$typelist = $contents->typelist($content);
 				$statsplain = $contents->tf_plain($content); //TF
@@ -203,26 +190,31 @@
 
 		?>
 
-		<div class="col-6 form">
-			<div id="form">
-				<h2>Input File</h2>
+		<div class="card text-center">
+			<div class="card-header">
+				Fitur
+			</div>
+			<div class="card-body">
+				<h5 class="card-title">Silakan upload file text</h5>
 				<form action="" method="POST" enctype="multipart/form-data">
-					<label for="inputfile">Upload</label>
 					<input id="inputfile" type="file" name="file" required="">
-					<input type="submit" name="submit" value="kirim">
+					<input type="submit" name="submit" value="kirim" class="btn btn-primary">
 				</form>
+				<!-- <a href="#" class="btn btn-primary">Go somewhere</a>
+				<p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+			</div>
+			<div class="card-footer text-muted">
+				3120640004 - Zuhad Achmad Fachrian - D4LJTI 
 			</div>
 		</div>
-
-		<div class="scrollable">
-			<div class="nowrap-content">
-				<div class="col-3">
+		<section>
+			<div class="row">
+				<div class="col-6">
 					<div id="isi">
 						<h2>Isi Konten</h2>
 						<div class="scroll">
 							<p style="padding:20px;line-height: 1.5em">
 								<?php
-
 									foreach ($ringkasan as $key) {
 										echo $key."<br />";
 									}
@@ -234,33 +226,16 @@
 						<h2 style="float: left">Jumlah Kata</h2>
 						<p style="text-align: right;padding: 20px;font-size: 40px"><?php echo $wordcount;?></p>
 					</div>
-<<<<<<< HEAD
-					<div id="stopwordlist">
-						<h2>Stopword List</h2>
-						<div class="scroll">
-							<p style="padding: 20px;line-height: 1.5em">
-								<?php
-									if(count($stopwordlist)==0){
-										echo "Tidak ada stopword";
-									}
-									foreach ($stopwordlist as $stopwordlists) {
-										echo $stopwordlists." ";
-									};
-								?>
-							</p>
-						</div>
-					</div>
 				</div>
 
-				<div class="col-3">
+				<div class="col-6">
 					<div id="table">
 
 						<div class="header">
-							<h2>Term Frequency</h2>
+							<h2>Frekuensi Kata</h2>
 							<div class="tab-button">
-								<div id="tab1" class="col-4 active" onclick="showpage1()"><a href="javascript:void(0)">Plain</a></div>
-								<div id="tab2" class="col-4" onclick="showpage2()"><a href="javascript:void(0)">Stopwords</a></div>
-								<div id="tab3" class="col-4" onclick="showpage3()"><a href="javascript:void(0)">Stemming</a></div>
+								<div id="tab1" class="col-6 active" onclick="showpage1()"><a href="javascript:void(0)">Plain</a></div>
+								<div id="tab2" class="col-6" onclick="showpage2()"><a href="javascript:void(0)">Stemming</a></div>
 								<div style="clear:both"></div>
 							</div>
 						</div>
@@ -319,7 +294,7 @@
 									</table>
 								</div>
 							</div>
-							<div id="page3" style="display: none;">
+							<div id="page2" style="display: none;">
 								<div class="scroll">
 									<table>
 										<tr>
@@ -350,102 +325,10 @@
 						</div>
 					</div>
 				</div>
-
-				<div class="col-3">
-					<div id="typelist">
-						<h2>Type List</h2>
-						<div class="scroll">
-							<p style="padding: 20px;line-height: 1.5em">
-								<?php
-									$jumlah_jenis = 0;
-									foreach ($typelist as $term=>$count) {
-										echo $term." ";
-										$jumlah_jenis++;
-									}
-								?>
-							</p>
-						</div>
-					</div>
-					<div id="jenis">
-						<h2 style="float: left">Jumlah Jenis</h2>
-						<p style="text-align: right;padding: 20px;font-size: 40px"><?php echo $jumlah_jenis;?></p>
-					</div>
-					<div id="wordlist">
-						<h2>Word List</h2>
-						<div class="scroll">
-							<p style="padding: 20px;line-height: 1.5em">
-								<?php
-									if(count($wordlist)==0){
-										echo "Tidak ada wordlist";
-									} else {
-										foreach ($wordlist as $wordlists) {
-											echo $wordlists." ";
-										}
-									}
-								?>
-							</p>
-						</div>
-					</div>
-					<div id="jenis-kata">
-						<h2 style="float: left">Jumlah Token</h2>
-						<p style="text-align: right;padding: 20px;font-size: 40px">
-							<?php
-								if(count($wordlist)==0){
-									echo "0";
-								} else {
-									echo count($wordlist);
-								}
-							?>
-						</p>
-					</div>
-				</div>
-
-				<div class="col-3">
-					<div id="bobot-kalimat">
-						<h2>Bobot Perkalimat</h2>
-						<div class="scroll">
-								<?php
-									$paraCounter = 1;
-									for ($h=0; $h < $jml_paragraf; $h++) {
-										if (!empty($ringkasan[$h])) {
-											echo "<br /><p style='padding:10px'><b>Paragraf ".$paraCounter."</b></p>";
-											$kalimatCounter = 1;
-											echo "<table>
-											<tr>
-											<th>No.</th>
-											<th>Kalimat</th>
-											<th>Bobot</th>
-											</tr>";
-											for ($i=0; $i < $jml_kalimat[$h]; $i++) { 
-												echo "<tr>
-												<td>".$kalimatCounter."</td>";
-												echo "<td style='text-align: left'>".$plain_kalimat[$h][$i]."</td>
-												<td>".substr($tfidfkalimat[$h][$i], 0, 5)."</td>
-												</tr>";
-												$kalimatCounter++;
-											}
-											$paraCounter++;
-											echo "</table>";
-											echo "<br /><br />";
-										}
-									}
-								?>
-						</div>
-					</div>
-					<div id="ringkasan">
-						<h2>Ringkasan</h2>
-						<div class="scroll">
-							<p style="padding:20px;line-height: 1.5em">
-								<?php
-									echo $hasil_ringkasan;
-								?>
-							</p>
-						</div>
-					</div>
-				</div>
 				<div style="clear: both;"></div>
-			</div><!-- END NOWRAP-CONTENT -->
-		</div>
+			</div>
+		</section>
+	
 		<?php } ?>
 	</div><!-- END CONTENT -->
 	<footer>
@@ -459,38 +342,24 @@
 	<script type="text/javascript">
 		var page1 = document.getElementById('page1');
 		var page2 = document.getElementById('page2');
-		var page3 = document.getElementById('page3');
 
 		var tab1 = document.getElementById('tab1');
 		var tab2 = document.getElementById('tab2');
-		var tab3 = document.getElementById('tab3');
 		
 		function showpage1(){
 			tab1.classList.add("active");
 			tab2.classList.remove("active");
-			tab3.classList.remove("active");
 
-			page3.style.display = "none";
 			page2.style.display = "none";
 			page1.style.display = "block";
 		}
 		function showpage2(){
 			tab1.classList.remove("active");
+			tab2.classList.remove("active");
 			tab2.classList.add("active");
-			tab3.classList.remove("active");
 
-			page3.style.display = "none";
 			page1.style.display = "none";
 			page2.style.display = "block";
-		}
-		function showpage3(){
-			tab1.classList.remove("active");
-			tab2.classList.remove("active");
-			tab3.classList.add("active");
-
-			page1.style.display = "none";
-			page2.style.display = "none";
-			page3.style.display = "block";
 		}
 	</script>
 </body>
