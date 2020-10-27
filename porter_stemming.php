@@ -62,13 +62,13 @@ return $kataa;
 }
 
 function cari($kata){
-  $dbServer = "localhost";
-  $dbUser = "root";
-  $dbPass = "";
-  $dbName = "tesonline";
-  $dbKon = mysqli_connect($dbServer, $dbUser, $dbPass, $dbName); 
- $hasil = mysqli_num_rows(mysqli_query($dbKon, "SELECT * FROM tb_katadasar WHERE katadasar='$kata'")); //membuat variabel $hasil untuk menampilkan hasil mengambil kata dasar dari database
- return $hasil; //mengeksekusi variabel $hasil
+//   $dbServer = "localhost";
+//   $dbUser = "root";
+//   $dbPass = "";
+//   $dbName = "tesonline";
+//   $dbKon = mysqli_connect($dbServer, $dbUser, $dbPass, $dbName); 
+//  $hasil = mysqli_num_rows(mysqli_query($dbKon, "SELECT * FROM tb_katadasar WHERE katadasar='$kata'")); //membuat variabel $hasil untuk menampilkan hasil mengambil kata dasar dari database
+//  return $hasil; //mengeksekusi variabel $hasil
 }
 //langkah 1 - hapus partikel
 function hapuspartikel($kata){
